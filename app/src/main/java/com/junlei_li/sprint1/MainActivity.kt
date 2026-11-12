@@ -3,6 +3,11 @@ import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.SeekBar
 import android.widget.Spinner
 import android.widget.Switch
@@ -53,6 +58,29 @@ class MainActivity : AppCompatActivity() {
         swNotificaciones.setOnCheckedChangeListener { _, isChecked ->
             val mensaje = if (isChecked) "Notificaciones activadas" else "Notificaciones desactivadas"
             Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+        }
+
+        val etNombre = findViewById<EditText>(R.id.etNombre)
+        val cbAndroid = findViewById<CheckBox>(R.id.cbAndroid)
+        val cbReact = findViewById<CheckBox>(R.id.cbReact)
+        val cbFlutter = findViewById<CheckBox>(R.id.cbFlutter)
+        val rgModalidad = findViewById<RadioGroup>(R.id.rgModalidad)
+        val btnGuardar1 = findViewById<Button>(R.id.btnGuardar1)
+        val tvResultado = findViewById<TextView>(R.id.tvResultado)
+
+        btnGuardar1.setOnClickListener {
+            val nombre = etNombre.text.toString().ifBlank { "Sin nombre" }
+
+            val tecnologias = mutableListOf<String>()
+            if (cbAndroid.isChecked) tecnologias.add("Android")
+            if (cbReact.isChecked) tecnologias.add("React")
+            if (cbFlutter.isChecked) tecnologias.add("Flutter")
+
+            val modalidad = findViewById<RadioButton>(rgModalidad.checkedRadioButtonId).text
+
+            tvResultado.text = "Nombre: $nombre\n" +
+                    "Tecnologías: ${tecnologias.joinToString().ifEmpty { "Ninguna" }}\n" +
+                    "Modalidad: $modalidad"
         }
     }
 }
