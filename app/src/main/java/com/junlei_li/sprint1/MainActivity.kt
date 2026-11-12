@@ -5,7 +5,9 @@ import android.webkit.WebViewClient
 import android.widget.ArrayAdapter
 import android.widget.SeekBar
 import android.widget.Spinner
+import android.widget.Switch
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -45,5 +47,12 @@ class MainActivity : AppCompatActivity() {
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
+
+        val swNotificaciones = findViewById<Switch>(R.id.swNotificaciones)
+
+        swNotificaciones.setOnCheckedChangeListener { _, isChecked ->
+            val mensaje = if (isChecked) "Notificaciones activadas" else "Notificaciones desactivadas"
+            Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+        }
     }
 }
