@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pantalla 3: resto de componentes de entrada e interacción -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecciona tecnologías:"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/cbAndroid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android" />
+
+        <CheckBox
+            android:id="@+id/cbReact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="React" />
+
+        <CheckBox
+            android:id="@+id/cbFlutter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flutter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Selecciona una modalidad:"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rgModalidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/rbPresencial">
+
+            <RadioButton
+                android:id="@+id/rbPresencial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Presencial" />
+
+            <RadioButton
+                android:id="@+id/rbOnline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online" />
+
+            <RadioButton
+                android:id="@+id/rbMixta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mixta" />
+        </RadioGroup>
+
+        <Switch
+            android:id="@+id/swNotificaciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Notificaciones" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Selecciona un curso:"
+            android:textStyle="bold" />
+
+        <!-- android:entries rellena el Spinner sin código Kotlin -->
+        <Spinner
+            android:id="@+id/spCurso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/cursos" />
+
+        <TextView
+            android:id="@+id/tvNivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nivel seleccionado: 50"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/sbNivel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:max="100"
+            android:progress="50" />
+
+        <Button
+            android:id="@+id/btnGuardar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Guardar información" />
+
+        <Button
+            android:id="@+id/btnGuardar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Guardar información" />
+
+        <TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="Aquí aparecerá el resultado." />
+
+    </LinearLayout>
+</ScrollView>
